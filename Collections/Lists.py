@@ -6,7 +6,7 @@
 students: list[str] = ['carlos','hano','nueeb','hiemie']
 
 my_list: list = [1, True, [1,2,3,4]] #- lists can hold any datatype as an element 
-
+my_list.append('another entry') #using append() function to add elements to the list
 
 print(students[1])
 
@@ -14,8 +14,8 @@ for student in students:
     print(student)
 
 
-#another way of doing this 
-#the len() function returns a number of items in an container (cnstainers can be lists, arrays,dictionaries)
+#another way of doing this  function returns a number of items in an container (cnstainers can be
+#the len() lists, arrays,dictionaries)
 for i in range(len(students)):
     print(students[i])
     
