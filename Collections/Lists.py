@@ -10,9 +10,11 @@ my_list.append('another entry') #using append() function to add elements to the 
 my_list.remove('another entry') # remove specific element from the list 
 my_list.pop(my_list[3]) # remove specific element from the list, using the index to specify which element
 
+#you can also edit a specific element within a list by using its index as a reference point
+my_list[1] = 2
 print(my_list) 
 
-print(my_list)
+
 
 for student in students:
     print(student)
