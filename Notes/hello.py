@@ -33,3 +33,12 @@ print('hello',userInput)
 #creating a function removes whitespace using .strip() method
 def stripWhiteSpc(userInput = input()):
     print( 'Hello,' ,userInput.strip())
+
+#Python exercutes code from top to bottom , so you have to define a function first and then call it as seen in example above
+#but there is a way to define your functions anywhere and call it from within something called the main() function/method
+def main():
+    Hello()
+
+#creating a functions called Hell() , which takes a string variable called x but x also has a default vaulue incase x isnt assigned a value
+def Hello(x='World'):
+    print('hello',x)

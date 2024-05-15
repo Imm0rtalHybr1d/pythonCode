@@ -1,7 +1,7 @@
 import datetime
 today = datetime.date.today()
 
-day_of_week = 'Tuesday'#today.strftime('%A')
+day_of_week = today.strftime('%A')
 print(day_of_week)
 
  #creating a list of exercises
@@ -19,6 +19,8 @@ days_of_week = ['Monday','Tuesday','wednesday','friday']
 #creating a loop that iterates though our exercises
 for position, exercise in enumerate(exercises):
     finished_exercise.append(exercise)
+
+    
     if days_of_week[position] == day_of_week:
 
         print("Today is ",days_of_week[position],'and we are doing' ,exercise)
