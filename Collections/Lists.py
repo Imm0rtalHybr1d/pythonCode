@@ -5,10 +5,14 @@
 
 students: list[str] = ['carlos','hano','nueeb','hiemie']
 
-my_list: list = [1, True, [1,2,3,4]] #- lists can hold any datatype as an element 
+my_list: list = [1, True, 2, 3] #- lists can hold any datatype as an element 
 my_list.append('another entry') #using append() function to add elements to the list
+my_list.remove('another entry') # remove specific element from the list 
+my_list.pop(my_list[3]) # remove specific element from the list, using the index to specify which element
 
-print(students[1])
+print(my_list) 
+
+print(my_list)
 
 for student in students:
     print(student)
