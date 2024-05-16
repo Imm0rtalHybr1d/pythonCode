@@ -11,6 +11,10 @@ story: str = f"""
 this is a story about {name}, a strong (and Handsome) {noun_a} who
 loved to {verb_a}
 
+{name} once {verb_b} and won a {noun_b} as a prize
+Isnt that incredible
+
+Today {name} is {int(number_a)+ int(number_b)} years old but the story will live forver 
 --------------------------------------------------------------------------------------
 """
 print(story)
