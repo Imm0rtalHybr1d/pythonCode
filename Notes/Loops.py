@@ -19,7 +19,7 @@ while i <= 3:
 #in the example below we using a for loop or iterate over a range from 0 - 4 
 #this starts at 0 is the first vaulue and ends at 4 as the last vaulue within the range
 for i in range(4):
-    print ("the current value of the variable is",i) 
+    print(f'{i} is the index position where the loop is currently at ')
 
 #you can also set where the loop counter starts within a range, see example below
 for i in range(1,4):
@@ -51,7 +51,7 @@ for i in range(15):
            print('The current value of the variable is ',i)
 
 #further explain using a list           
-testlist = ['jack','hano', 'hiemie', 'carlos'] # creating a list that contains  names
+testlist: list[str] = ['jack','hano', 'hiemie', 'carlos'] # creating a list that contains  names
 for i in testlist:   #use the for loop to itterate thru the list with i representing the index/the position we are in the list
     if 'hano' in i or i=='hano':
         continue
