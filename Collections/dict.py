@@ -21,6 +21,8 @@ weather: dict[str:str] = {'time': '12:00',
 weather['time'] = '12:12'  #we can also modify values  using the key as the index
 weather.pop('time') #you can remove items in your dict by using pop()
 del weather["forcast"] #you can remove items in your dict by using del keyword
+weather.get(3) #tries to get key 3 but it doesnt exist so we'll get a KeyError exception
+
 
 print(weather['time'])  #can change a spicific value by using the key as the index
 #here we print a value from within the forcast dictionary which is within the weather dictionary 
