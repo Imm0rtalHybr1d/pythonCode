@@ -19,4 +19,4 @@ else:
     print('False')
 
 #if you wanna set something you could use a tupple
-Software_version :tuple[float] = (1.23) - #in this example we declare that the software version is 1.23 using a tupple , this will not change throught our program
+Software_version :tuple[float] = (1.23)  #in this example we declare that the software version is 1.23 using a tupple , this will not change throught our program
