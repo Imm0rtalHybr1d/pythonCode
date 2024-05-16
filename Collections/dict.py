@@ -1,13 +1,27 @@
 #dictionaries allow you to associate one value with another 
-#dicts use Keys and vaulues 
+#dicts use Keys : value pairs
 #below is the basic example of creating a dictionary
+
 students = {
     "Hermoine": "Gryffindor",
     "Harry": "Gryffindor",
     "Ron": "Gryffindor",
     "Draco": "Slytherin",
 }
-print (students["Hermoine"])
+#can print a spicific key by using the key as the index
+print (students["Hermoine"]) #this will output 'Gryffindor
+students['Harry'] = 'Slytherin' #can change a spicific value by using the key as the index
+
+#STORING DICTS IN DICTS
+weather: dict = {'time': '12:00',
+                 'weather':{'Morning':'Rain',
+                            'Evening':'More rain'}   
+                }
+
+
+
+
+
 
 #creating an empty dict
 finished = {}
