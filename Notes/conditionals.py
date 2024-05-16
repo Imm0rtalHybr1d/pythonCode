@@ -1,3 +1,13 @@
+number: int = 0
+#this if statement will output above zero if number > 0 else it will output 0 and below
+if number > 0:
+    result: str = 'above 0'
+else:
+    result: str = '0 and below'    
+
+#you can also use the shorthand version
+    result = 'above 0' if number > 0 else '0 and below'
+
 def greet():
     greet = ("hello world")
     if greet == "hellsssddo world":     #opening up using the if statement
