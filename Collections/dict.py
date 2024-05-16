@@ -2,7 +2,7 @@
 #dicts use Keys : value pairs
 #below is the basic example of creating a dictionary
 
-students = {
+students: dict[str,str] = {
     "Hermoine": "Gryffindor",
     "Harry": "Gryffindor",
     "Ron": "Gryffindor",
@@ -13,10 +13,18 @@ print (students["Hermoine"]) #this will output 'Gryffindor
 students['Harry'] = 'Slytherin' #can change a spicific value by using the key as the index
 
 #STORING DICTS IN DICTS
-weather: dict = {'time': '12:00',
-                 'weather':{'Morning':'Rain',
+weather: dict[str:str] = {'time': '12:00',
+                 'forcast':{'Morning':'Rain',
                             'Evening':'More rain'}   
                 }
+
+weather['time'] = '12:12'  #we can also modify values  using the key as the index
+weather.pop('time') #you can remove items in your dict by using pop()
+del weather["forcast"] #you can remove items in your dict by using del keyword
+
+print(weather['time'])  #can change a spicific value by using the key as the index
+#here we print a value from within the forcast dictionary which is within the weather dictionary 
+print(weather["forcast"]['Evening']) 
 
 
 
