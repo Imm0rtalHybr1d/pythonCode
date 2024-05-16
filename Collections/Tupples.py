@@ -2,10 +2,12 @@
 #its immutable i.e you cannot change it 
 #tuple is faster than lists 
 #its stored on 1 block of memory compared to lists which are 2 blocks of memory
-Coordiantes : tuple[float]= (2.3, 34.4, 5.4)
-
 #what the usecase ? 
 #for quick fetching data , function returns
+#if you know the data will never change then use a tupple, else use a list
+Coordiantes : tuple[float]= (2.3, 34.4, 5.4)
+version_number: tuple[float,str] = (2.133, 'Alpha') #here we creat a tupple and specify the data that is stored at each index
+
  
 #can also be be used with conditionals
 t1: tuple[int] = (1, 2, 3) 
