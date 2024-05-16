@@ -8,13 +8,11 @@ students: list[str] = ['carlos','hano','nueeb','hiemie']
 my_list: list = [1, True, 2, 3] #- lists can hold any datatype as an element 
 my_list.append('another entry') #using append() function to add elements to the list
 my_list.remove('another entry') # remove specific element from the list 
-my_list.pop(my_list[3]) # remove specific element from the list, using the index to specify which element
+my_list.pop() # remove last element from the list
+my_list[1] = 2#you can also edit a specific element within a list by using its index as a reference point
+my_list.insert(3, 'blah') #we use insert method to add the element 'blah at index [3]
 
-#you can also edit a specific element within a list by using its index as a reference point
-my_list[1] = 2
-print(my_list) 
-
-
+my_list.clear() #clears the entire list
 
 for student in students:
     print(student)
