@@ -96,4 +96,32 @@ def get_value():
         
 returned_val = get_value()        
 print('He ',returned_val )
+ 
+#WHILE LOOP_______________________________________________________________________________
+total: int = 0
+print('Welcome to Calc+! Add positive numbers , or insert "0" to exit')
+while True:
+    user_input:int = int(input('Enter a number: '))
+    if user_input < 0:
+        print('Please enter positive numbers only!')
+        continue
     
+    if user_input == 0:
+        print(f'Total: {total}')
+        break
+        
+    total +=user_input    
+
+#FOR ELSE________________________________________________________________________________    
+for i in range(3):
+    print(f'Iteration: {i}')
+else: #the else block acts as a success block , it will always exercute if the for loop has completed looping successfully 
+    print('All the iterations have been printed')
+    
+#WHILE ELSE________________________________________________________________________________
+total2 = 0
+while total2 > 0:
+    total-=1
+    print(None)
+else:
+    print('Loop  has completed successfully with no interuptions ')    
