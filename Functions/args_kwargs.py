@@ -7,8 +7,10 @@
 
 # print(add(1,2,3))
 
-#
+#creates a function that takes in *args called people,
+# a positional arg called greeting 
+#and another arg called ending 
 def greet(*people:str,greeting:str,ending:str) -> None:
     for person in people:
         print(f'{greeting} {person}, {ending}')
-greet('Hano','Hiemie','Nueeb',greeting='Hello',ending='we gyming today? ')
+greet('Hano','Hiemie','Nueeb',greeting='Hello',ending='we gyming today? ') 
