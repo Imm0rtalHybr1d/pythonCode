@@ -18,7 +18,7 @@ def greet(*people:str,greeting:str,ending:str) -> None:
         print(f'{greeting} {person}, {ending}')
 greet('Hano','Hiemie','Nueeb',greeting='Hello',ending='we gyming today? ') 
 
-# *KWARGS________________________________________________
+# *KWARGS___________WILL ALWAYS CONVERT TO DICT_________________________
 def pin_position(**kwargs: int) -> None:
     print(kwargs)
     
