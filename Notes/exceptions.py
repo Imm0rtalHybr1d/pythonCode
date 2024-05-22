@@ -34,15 +34,17 @@ def get_input():
 def get_list():
     while True:
         try:   
-            uinput = int(input('Give numbers: '))
-            
-        #you can also display what the actual exception is by using the following syntax    
+            uinput = int(input('Give numbers: '))            
+           
         except NameError:
             print('please enter numbers only ')
+            
+        #you can also display what the actual exception is by using the following syntax 
         except ValueError as e:
             print(f'somthing went wrong heres the error : {e}')
-
-        #the else keyword makes the program continue if there was no exceptions in our code             
+            
+        #the else keyword makes the program continue if there was no exceptions in our code
+        #works as a success block             
         else:
             numbers.append(uinput)
             if len(numbers) == 5:
@@ -50,7 +52,8 @@ def get_list():
             else:
                 continue
         #you can use the finally keyword to exercute regardless of whether you caught any exceptions or not 
-        print('this code will always be exercuted because its in the finally block ')
+        finally:
+            print('this code will always be exercuted because its in the finally block ')
 
 def main():
     get_list()
