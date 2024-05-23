@@ -98,7 +98,7 @@ how_are_you: list[str] = ["I'm on top of the world! How about you?",
 ]
 
 
-def greet_user(user_lang:str) -> str:    
+def greet_user(user_lang:str,user_name:str) -> str:    
     print(f'{greetings[user_lang]} {user_name}')
                  
 def get_response(user_lang,username) -> str:
@@ -134,12 +134,16 @@ def check_lang (user_lang):
     else :
         print('BOT:I dont know that language, try another :(')    
 
-print('BOT: what is your name ? ')
-#get user name
-user_name = input('You: ')
-print(f'BOT: What language would you like to be greeted in ? ' ) 
-#get user language
-user_lang = input(f'You: ').lower()
+def main():
+    print('BOT: what is your name ? ')
+    #get user name
+    user_name = input('You: ')
+    print(f'BOT: What language would you like to be greeted in ? ' ) 
+    #get user language
+    user_lang = input(f'You: ').lower()
 
-check_lang(user_lang) 
-get_response(user_lang,user_name) 
+    check_lang(user_lang) 
+    get_response(user_lang,user_name) 
+    
+if __name__ == '__main__'   :
+    main()
