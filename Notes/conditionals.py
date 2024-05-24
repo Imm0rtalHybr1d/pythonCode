@@ -1,4 +1,5 @@
 number: int = 0
+test_var:str = 'blaj'
 #this if statement will output above zero if number > 0 else it will output 0 and below
 if number > 0:
     result: str = 'above 0'
@@ -10,8 +11,10 @@ else:
 
 def greet():
     greet = ("hello world")
+    global test_var 
+    test_var = None
     if greet == "hellsssddo world":     #opening up using the if statement
-        return ("sd") 
+        return True 
     
 #creating a basic If statement within a function
 def testingIf(input):
@@ -23,6 +26,7 @@ def testingIf(input):
 testingIf(input())
 
 #creating another if statement and using return values
+
 def guessAns():
     userans = int(input('Give a number'))
     return userans
@@ -32,7 +36,7 @@ def main():
     print (userAns)
     
 #conditional statement checking if the greet method returns a certain text, if so then print certain text
-if greet() == "hellsssddo world":     #opening up using the if statement
+if greet() :     #opening up using the if statement
     print("sd") 
 elif greet() == "hellssdo world":     #using elif to do further checks 
     print("Mo")

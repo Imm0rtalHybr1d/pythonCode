@@ -1,4 +1,4 @@
-# INT______________________________________________
+# ____________________INT__________________________
 age : int = 30
 money : int = 100
 test :int = -45
@@ -10,7 +10,7 @@ print(age - money)
 print(age * money)
 #int can be converted to float 
  
-# FLOAT______________________________________________
+# __________________FLOAT____________________________
 percent: float = 0.5
 height: float = 1.72
 width: float = 23.2333
@@ -19,8 +19,12 @@ width: float = 23.2333
 print(percent + height)
 print(width / percent)
 #float cannot be easily converted to int ( 10.2 -> int would yield an error without rounding the number up)
-
-#OPERATORS__________________________________________________________
+     
+     
+     #________________________COMPARING FLOATS ________________________________
+... ;       print(f'.1 + .2 = {.1 + .2}')
+    
+#___________________________OPERATORS_______________________________
 # // # Floor devision - this prints a divided by b but cuts it by the decimal and only gives us the whole number
 # ** # Exponetional
 # %  # Modulous - returns the remainder  (works opposite of floor devision)
