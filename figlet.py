@@ -28,50 +28,26 @@ def selected_font(user_input:str,user_font:str ):
 def check_font(user_font:str) ->bool:
     if user_font in avail_fonts:
         return True
-               
-   
-    
-    
-    
-    
      
-if len(sys.argv) == 1:
+if len(sys.argv) == 1: #no args given
     user_input = input("Input: ")
     random_font(user_input)
-    
-    
+     
 if len(sys.argv) == 3 :
     
-
-    if sys.argv[1] == '-f' :
-        print(f'it contains -f  {sys.argv[1]}')
+    if sys.argv[1] in ['-f', '--font']:
         if check_font(sys.argv[2]):
             #get input from user
             user_input = input('Input: ')
             selected_font(user_input=user_input,user_font=sys.argv[2])
         else:
-            sys.exit('Invalid Font')    
-    elif sys.argv[1] == '--font':
-        if check_font(sys.argv[2]):
-            #get input from user
-            user_input = input('Input: ')
-            selected_font(user_input=user_input,user_font=sys.argv[2])
-# else:
-#     # print(f'agrs: {len(sys.argv)}, value of argv[1]: {sys.argv[1]}, value of argv[2]: {sys.argv[2]}')
-#     print('invalid usage')
-#     sys.exit()   
-    
-    
- 
-
-
-    
-
-
-
-
-
-
-
-
-
+            sys.exit('Invalid usage')    
+    # elif sys.argv[1] == '--font':
+    #     if check_font(sys.argv[2]):
+    #         #get input from user
+    #         user_input = input('Input: ')
+    #         selected_font(user_input=user_input,user_font=sys.argv[2])
+    else:
+        sys.exit('Invalid usage')        
+else:
+    sys.exit('Invalid usage')   
