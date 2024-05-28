@@ -1,5 +1,8 @@
 import random as r
+import statistics
 
+meen = statistics.mean([1,23,34,45,56,67,34,45,56,])
+print(f'the mean is {round(meen,2)}')
 
 test: list = [1,2,3,4,5,'blahhh','sdds','dsd']
 #choses random choice
