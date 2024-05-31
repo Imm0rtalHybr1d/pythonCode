@@ -33,21 +33,13 @@ if len(sys.argv) == 1: #no args given
     user_input = input("Input: ")
     random_font(user_input)
      
-if len(sys.argv) == 3 :
-    
-    if sys.argv[1] in ['-f', '--font']:
-        if check_font(sys.argv[2]):
+if len(sys.argv) == 3 and sys.argv[1] in ['-f', '--font']:    
+      #if user input is in list ['-f', '--font']
+        if check_font(sys.argv[2]): #chec
             #get input from user
             user_input = input('Input: ')
             selected_font(user_input=user_input,user_font=sys.argv[2])
         else:
             sys.exit('Invalid usage')    
-    # elif sys.argv[1] == '--font':
-    #     if check_font(sys.argv[2]):
-    #         #get input from user
-    #         user_input = input('Input: ')
-    #         selected_font(user_input=user_input,user_font=sys.argv[2])
-    else:
-        sys.exit('Invalid usage')        
 else:
     sys.exit('Invalid usage')   
