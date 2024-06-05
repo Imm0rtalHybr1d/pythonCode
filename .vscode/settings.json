@@ -1,0 +1,12 @@
+{
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "vscode_custom_css.imports": [
+        ""
+    ],
+    "terminal.integrated.defaultProfile.linux": "",
+    "notebook.editorOptionsCustomizations": {
+        "editor.acceptSuggestionOnCommitCharacter": true
+    },
+    "terminal.explorerKind": "integrated",
+    "terminal.integrated.defaultProfile.windows": "Windows PowerShell"
+}
