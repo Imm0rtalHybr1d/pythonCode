@@ -8,5 +8,5 @@
         "editor.acceptSuggestionOnCommitCharacter": true
     },
     "terminal.explorerKind": "integrated",
-    "terminal.integrated.defaultProfile.windows": "Windows PowerShell"
+    "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
