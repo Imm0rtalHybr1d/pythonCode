@@ -1,13 +1,13 @@
 #create a class called Car
 class Car:
-    #defining the car class 
+    #defining the car class / Initializing a class
     def __init__(self,brand:str,model:str,colour:str,wheels:int) -> None:
         self.brand = brand
         self.model = model
         self.colour = colour
         self.wheels = wheels
         
-        
+    #some functionality of this Car class    
     def turn_on(self) -> None :
         print(f'Turning on {self.brand}{self.model}')
         
@@ -23,12 +23,14 @@ class Car:
 
 
 def main():
+    #creating an instance/object of the car class
         bmw: Car =  Car('BMW','M5 Competition','Blue','4')
         bmw.turn_on()
         bmw.drive(20)
         bmw.describe()
         bmw.turn_off()
         print("")
+        
         print("")
         volvo: Car = Car('Volvo', 'V40', 'Copper',4)
         volvo.turn_off()
