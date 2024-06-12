@@ -1,14 +1,14 @@
 import sys
-import requests
 import random
 from datetime import datetime
 import BTC_Class
-import os
-import time
+import Itunes_Class
 import Weather_Class
- 
+import os
+import time 
+
+os.system('cls')
 def greeting(user_name:str) -> None:
-    
     print('')
     print('Chatbot is typing ...')    
     time.sleep(2)
@@ -38,11 +38,9 @@ def get_date_time() -> None:
     #formats it in dd/mm/yy
     formatted_date = today.strftime("%d %B %Y")
     print(f'Todays date is {formatted_date}')  
-    
-def get_weather():
-    ...
-    
+        
 def main():
+    os.system('cls')
     print(f'Hello, im a simple ChatBot with limited functionality')
     user_name:str = input('Whats your name? ')  #prompt user for their name
     greeting(user_name) #greet user by their name
@@ -65,14 +63,30 @@ def main():
             break
         elif 'date' in user_input.lower():
             get_date_time()
+            
         elif 'weather' in user_input.lower():
             user_city:str = input('Please enter the name of your city ')
             os.system('cls')
             
             weather: Weather_Class.Weather = Weather_Class.Weather(user_city)
             weather.get_weather()
+        
+        elif 'music' in user_input.lower():
+            user_artist: str = input('Please enter an artist name >>> ')
+            user_query:str = input('Would you like to view songs or albums of this artist >>>')
+            
+            if user_query.lower() in ['song','songs']:
+                user_num_of_songs:int = input('Please enter the number of songs reccomendations youd like >>> ')
+                itunes:Itunes_Class.Itunes_API = Itunes_Class.Itunes_API(user_artist)            
+                itunes.get_songs(user_num_of_songs)
+            elif user_query.lower() in ['album', 'albums']:
+                itunes:Itunes_Class.Itunes_API = Itunes_Class.Itunes_API(user_artist)            
+                itunes.get_albums()
+                
+            print('')
         else:
-            print(f'I dont understand {user_input}')    
+            print(f'I dont understand {user_input}')  
+            print('Thers a reason my name is Botruneesa') 
             continue
         
  
