@@ -29,22 +29,16 @@ class Itunes_API:
         
         if response.status_code == 200:
             print(f'Here are the Albums for {self.artist}:')            
-            for result in album_data["results"]:
-                
+            for result in album_data["results"]:                
                 release_year = result['releaseDate']
                 # Parse the date string using datetime.datetime.fromisoformat()
                 date_obj = datetime.fromisoformat(release_year)
                 # Format the date object as desired (1 January 2010)
-                formatted_date = date_obj.strftime("%d %B %Y")
-                
+                formatted_date = date_obj.strftime("%d %B %Y")                
                 print( f'{result['collectionName']} - {formatted_date} - Tracks:{result['trackCount']} '  )
+            
             print('')
             print('If the results are inaccurate , Blame the Itunes API, all this data comes from Itunes API')        
-    #TESTING    
-# def main():
-#     api: Itunes_API = Itunes_API('Michael Jackson')
-#     api.get_albums()
- 
-# if __name__ == "__main__":
-#     main()
- 
+        else:
+            print('failed to retreive data from this link')
+            print(f'Error Code {response.status_code}')

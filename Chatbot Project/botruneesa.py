@@ -59,8 +59,9 @@ def main():
             BTC_quantity:float = input('Please enter a quantity >>> ')
             
             crypto: BTC_Class.BitcoinAPI = BTC_Class.BitcoinAPI(user_currency,BTC_quantity)
-            crypto.connect_API()
+            crypto.get_BTC_rate()
             break
+        
         elif 'date' in user_input.lower():
             get_date_time()
             
