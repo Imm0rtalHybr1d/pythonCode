@@ -1,4 +1,3 @@
-import pytest
 from calc import square
 
 def test2_squre() -> None:
