@@ -1,3 +1,0 @@
-city: Cape Town
-temperature: 16.85
-description: clear sky
