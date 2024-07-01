@@ -1,7 +1,5 @@
-from os import system
 
-system('cls')
-
+# SIMPLE CALCULATOR
 def main()-> None:
     x:int = int(input('What is X? '))
     print(f'x squared is {square(x)}')
