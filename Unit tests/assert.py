@@ -2,14 +2,8 @@
 from calc import square
 
 def test_square() :
-    
-    # 1)SIMPLE ERROR CHECKING
-    if square(2) != 4:
-        print(f'2 squared was not 4')
-    if square(3) != 9:
-        print('3 squred did not return 9')  
-    
-#___________2)USING assert() for ERROR CHECKING ___________ 
+
+#___________1)USING assert() for ERROR CHECKING ___________ 
     try:
         assert square(2) == 4    
         assert square(3) == 93   
