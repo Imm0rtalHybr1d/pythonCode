@@ -1,3 +1,4 @@
+from difflib import get_close_matches
 import sys
 import random
 from datetime import datetime
@@ -47,8 +48,11 @@ def main():
     
     while True:
         user_input = input('Ask me something >>> ')
+        #compares user input with a list of possible Topics 
+        Topics:list[str] = get_close_matches(user_input, ['btc', 'date','weather','music'], n=1, cutoff=0.6)
         
-        if user_input.lower() in ['btc', 'bitcoin']  :
+        if Topics:
+            
             print('')
             print('Choose a currency: USD, EUR, ZAR') 
             

@@ -8,7 +8,7 @@ students: dict[str,str] = {
     "Ron": "Gryffindor",
     "Draco": "Slytherin",
 }
-#can print a spicific key by using the key as the index
+#can print a spicific value by using the key as the index
 print (students["Hermoine"]) #this will output 'Gryffindor
 students['Harry'] = 'Slytherin' #can change a spicific value by using the key as the index
 
