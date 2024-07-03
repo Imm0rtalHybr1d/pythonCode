@@ -21,10 +21,10 @@ class BitcoinAPI:
     def get_BTC_price(self) ->str:
         self.key:str = [self.key for self.key,self.val in self.all_currency.items() if self.val == self.user_currency]
         try:
-            if self.user_currency == 'ZAR':
+            if self.user_currency in ['ZAR','zar','Zar']:
                 rate = float(1347420.63)
                 print(f'Current price of BTC: {self.key[0]}{rate:,.2f}')
-                print(f'{round(self.quantity,0)} BTC would cost you {self.key[0]}{(rate*self.quantity):,.2f}')
+                return(f'{round(self.quantity,0)} BTC would cost you {self.key[0]}{(rate*self.quantity):,.2f}')
             else:    
                 rate = float(self.response['bpi'][self.user_currency]['rate'].replace(",", ""))#converts rate to a float by removing the comma
                 print(f'Current price of BTC: {self.key[0]}{rate:,.2f}')

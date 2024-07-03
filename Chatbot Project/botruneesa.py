@@ -1,6 +1,4 @@
 from difflib import get_close_matches
-import sys
-import random
 from datetime import datetime
 import BTC_Class
 import Itunes_Class
@@ -39,7 +37,20 @@ def get_date_time() -> None:
     #formats it in dd/mm/yy
     formatted_date = today.strftime("%d %B %Y")
     print(f'Todays date is {formatted_date}')  
-        
+
+def check_topics(user_input) -> str:
+    
+    topics_dict:dict[str:str] = {
+        'topics':('btc','weather','music','weather','date'),        
+        }
+    topic_matches:list[str] = [v for v in topics_dict['topics']]
+    Topics:list[str] = get_close_matches(user_input, topic_matches, n=2, cutoff=0.6)
+    
+    if Topics:
+        return Topics[0]
+    else:
+        return f'No items that match'
+          
 def main():
     os.system('cls')
     print(f'Hello, im a simple ChatBot with limited functionality')
@@ -48,10 +59,9 @@ def main():
     
     while True:
         user_input = input('Ask me something >>> ')
-        #compares user input with a list of possible Topics 
-        Topics:list[str] = get_close_matches(user_input, ['btc', 'date','weather','music'], n=1, cutoff=0.6)
+        Topics:str = check_topics(user_input)
         
-        if Topics:
+        if Topics in ['btc','BTC','Btc'] :
             
             print('')
             print('Choose a currency: USD, EUR, ZAR') 
@@ -64,12 +74,13 @@ def main():
             
             crypto: BTC_Class.BitcoinAPI = BTC_Class.BitcoinAPI(user_currency,BTC_quantity)
             crypto.get_BTC_rate()
+            
             break
         
-        elif 'date' in user_input.lower():
+        elif Topics == 'date' :
             get_date_time()
             
-        elif 'weather' in user_input.lower():
+        elif Topics == 'weather' :
             user_city:str = input('Please enter the name of your city ')
             os.system('cls')
             
