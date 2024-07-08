@@ -9,5 +9,6 @@
     },
     "terminal.explorerKind": "integrated",
     "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "python.analysis.autoImportCompletions": true
+    "python.analysis.autoImportCompletions": true,
+    "docwriter.progress.trackFunctions": false
 }
