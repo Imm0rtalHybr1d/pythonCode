@@ -20,3 +20,27 @@ but we can use strict mode which will raise an exception if the if youre trying 
 """    
 zipped2:zip = zip(symbols,numbers,strict=True)
 print(list(zipped2))
+
+def zipper(list1:list[int],list2:list[str],list3:list[str]) -> None:
+    """
+    The function `zipper` takes three lists of different types, zips them together element-wise, and
+    prints the zipped result.
+    
+    :param list1: A list of integers:type list1: list[int]    
+    :param list2: A list of integers:type list2: list[str]    
+    :param list3: The `list3` parameter in the `zipper` function is a list of strings. It will be zipped
+    together with `list1` (a list of integers) and `list2` (a list of strings) to create a new zipped
+    list containing elements from all three lists
+    :type list3: list[str]
+    """
+    zipped3: zip = zip(list1,list2,list3)
+    print(list(zipped3))
+    
+def main():   
+
+    zipper(numbers,letters,symbols)
+
+ 
+if __name__ == "__main__":
+    main()
+     

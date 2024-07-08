@@ -1,11 +1,12 @@
-"""sorted returns in ascending order by default"""
-
+# 'The code snippet is creating a list of integers called `num_list` with the values `[1234, 424, 54, 5784, 784, 1, 2, 254, 817, 454, 78451, 7]`.
+# 'It then sorts this list in ascending order using the `sorted()` function and assigns the sorted result to a new list called `sorted_list`.
+# 'Finally, it prints the sorted list.
 num_list:list[int] = [1234,424,54,5784,784,1,2,254,817,454,78451,7]
 sorted_list:list[int] = sorted(num_list)
 print(sorted_list)
 
 """if using strings, it sorts in alphabetical order by its ascii value"""
-name_list:list[str] = ['Ana','Kita','Mandy','Chris','Chevon']
+name_list:list[str] = ['Ana','Kita','Mandy','Chris','Shevon']
 sorted_name_list:list[str] = sorted(name_list)
 print(sorted_name_list)
 
