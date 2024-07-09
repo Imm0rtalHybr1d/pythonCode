@@ -40,7 +40,7 @@ def unpacking() -> None:
     arguments to the `print` function.
     """
     numbers: list[int] = [1,2,3,4,5]
-    params:dict[str:str] = {'sep': '-','end':'.'}
+    params:dict[str:str] = {'sep': '•','end':'.'}
     
     print(*numbers,**params)
 
