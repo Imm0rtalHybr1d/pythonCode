@@ -17,10 +17,17 @@ print(f' ')
 
 with open('testing.csv') as file:
     rows:list[str] = file.readlines()    
-
+    students:dict[str:str] = {}
+    
     for row in rows:
+        #unpacking key and value from each line in csv file 
+        #unpacked into 2 viariables serperated by the comma 
         name,surname = row.rstrip().split(',')
-        students:dict[str:str] = {'name':name, 'surname':surname}
         
-        print(f'{students['name']}, {students['surname']}')
+        #assigned the values of name and surname to the name and surname keys of the
+        students['name'] = name
+        students['surname'] = surname
+
+        print(f'{students['name']}, {students['surname']}')   
+
        
