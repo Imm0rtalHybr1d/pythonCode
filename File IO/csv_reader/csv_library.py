@@ -1,14 +1,13 @@
 import csv
 
 students = []
-with open("students_home.csv") as file:
-    reader = csv.reader(file)
-    next(reader)  # Optionally skip the header row if present
+with open(fr"File IO\csv_reader\students_home.csv") as file:
+    reader = csv.DictReader(file)    
     for row in reader:
-        name, *address = row  # Directly assign the first element as name and the rest as address
-        students.append({'name': name, 'address': list(address)})
+        students.append({'name': row['name'], 'home': row['home']})
+        
     
-sorted_list = sorted(students, key=lambda student: student['name'])
+# sorted_list = 
 
-for student in sorted_list:
-    print(f"{student['name']} lives at {student['address']}")
+for student in sorted(students, key=lambda student: student['name']):
+    print(f"{student['name']} lives at {student['home']} ")
