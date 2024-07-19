@@ -5,7 +5,7 @@ import csv
 parts_list:list = []
 parts_dict:dict = {}
 
-with open(fr"File IO\PC/pc.csv") as file:
+with open(fr"File IO/PC/pc.csv") as file:
     reader = csv.DictReader(file)    
           
     for row in reader:        

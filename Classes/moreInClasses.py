@@ -1,6 +1,8 @@
 from typing import Self
 
 
+# The class `Person` defines a simple data structure for storing a person's name and age, with methods
+# for string representation and equality comparison.
 class Person:
     def __init__(self,name:str,age:int) -> None:
         self.name = name
