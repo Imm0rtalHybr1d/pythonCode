@@ -12,7 +12,7 @@ def organize_files_on_desktop():
     
         
     # Define the directory structure as a dictionary,
-    # catagory name is the key and the list of extensions represents the values 
+    # folder name is the key and the list of extensions represents the values 
     
     dir_structure = {
         'images': ['.png', '.jpg', '.jpeg'], 
