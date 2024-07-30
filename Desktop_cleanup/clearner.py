@@ -3,7 +3,7 @@ import shutil
 
 
 def organize_files_on_desktop():
-    desktop_path = os.path.join(os.environ['USERPROFILE'], 'Desktop')
+    desktop_path:str = os.path.join(os.environ['USERPROFILE'], 'Desktop')
     
     # desktop_path = os.path.join(fr'C:\Users\01465307\OneDrive - University of Cape Town','Desktop') - this is the path of my desktop
     
@@ -14,9 +14,9 @@ def organize_files_on_desktop():
     # Define the directory structure as a dictionary,
     # catagory name is the key and the list of extensions represents the values 
     
-    dir_structure = {
+    dir_structure:dict[str:str] = {
         'images': ['.png', '.jpg', '.jpeg'], 
-        'documents': ['.pdf', '.docx', '.doc', '.txt'],
+        'DOCS': ['.pdf', '.docx', '.doc', '.txt'],
         'videos': ['.mp4', '.avi'],
     }
     

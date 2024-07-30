@@ -1,0 +1,12 @@
+{
+  "name": "Hano",
+  "age": 26,
+  "Friends":["Mario", "Luigi"],
+  "Other info": null
+}
+
+{
+  "name": "Bob",
+   "age": 12,
+    "job": null
+}
