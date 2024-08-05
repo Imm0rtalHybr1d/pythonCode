@@ -8,13 +8,15 @@ def ensure_directory_exists(path:str) -> None:
         print(f'{path} created')
         
 def organize_files_on_desktop() -> None:
-    # desktop_path:str = os.path.join(os.environ['USERPROFILE'], 'Desktop')
-    
-    desktop_path = os.path.join(fr'C:\Users\01465307\OneDrive - University of Cape Town','Desktop')    
+    """
+    The `organize_files_on_desktop` function organizes files on the desktop based on predefined
+    categories and their corresponding file extensions.
+    """
+    desktop_path:str = os.path.join(os.environ['USERPROFILE'], 'Desktop')    
+    # desktop_path = os.path.join(fr'C:\Users\01465307\OneDrive - University of Cape Town','Desktop')    
     
     # List all files on the Desktop
     files:list[str] = os.listdir(desktop_path)
-    
         
     # Define the directory structure as a dictionary,
     # catagory name is the key and the list of extensions represents the values 
@@ -23,11 +25,8 @@ def organize_files_on_desktop() -> None:
         'PICS': ['.png', '.jpg', '.jpeg'], 
         'DOCS': ['.pdf', '.docx', '.doc', '.txt'],
         'MEDIA': ['.mp4','.wmv','.mkv' ,'.avi', '.mp3', '.flac','.m4a','.aac'],
-        
     }
     
-
-    #for each file in the list of files 
     for file in files:
         
         #gets the path of the current file but joining the desktop path and filename with extension, 
@@ -62,9 +61,7 @@ def organize_files_on_desktop() -> None:
     print("Files organized successfully.")
 
 def organize_docs() -> None:
-    #create a function that check if a folder exits, if not, them create it
-
-    
+    #specifying folder paths for the folders we are going to use in this function 
     desktop_path = os.path.join(fr'C:\Users\01465307\OneDrive - University of Cape Town','Desktop')
     docs_path = os.path.join(desktop_path, 'DOCS')
     PDF_folder_path: str = os.path.join(docs_path, 'PDF')
@@ -74,16 +71,14 @@ def organize_docs() -> None:
 
 
     # Mapping file extensions to directories
-    file_type_directories = {
+    file_type_directories:dict[str,str] = {
     PDF_folder_path: '.pdf',
     Word_Docs_path: ('.docx','.doc'),   
     Text_file_path: '.txt',
     }
 
-    for file in Docs_folder:    
-        
-        file_path: str = os.path.join(docs_path, file) #get file path of the current file
-        
+    for file in Docs_folder:            
+        file_path: str = os.path.join(docs_path, file) #get file path of the current file        
         if os.path.isfile(file_path): #ensure path refers to a file and not a directory/folder
             
             for folder, ext in  file_type_directories.items():
@@ -93,37 +88,39 @@ def organize_docs() -> None:
                     ensure_directory_exists(destination_folder)
                     shutil.move(file_path,destination_folder )
                     
-def contains_required_files(folder_path:str)-> int|str:
-    required_extensions:list[str] = [".pdf", ".docx", ".txt"]
-    for dirpath, dirnames, files in os.walk(folder_path):
-        for file in files:
-            if file.lower().endswith(required_extensions):
-                doc_counter += 1
-                return doc_counter
-    return doc_counter
-
-def path_is_dir() -> None:    
-    directories:list[str] = os.listdir(main_desktop_path)  
-    docs_path:str = os.path.join(main_desktop_path, 'DOCS')
-    
-    for folder in directories:
-        folder_path:str = os.path.join(main_desktop_path,folder) #gets path of that folder
-        if os.path.isdir(folder_path) and folder_path != docs_path:#checks if the path is actually a folder
-            print(f'{folder} is not the DOCS folder')
-            #checks if those folders contains documents 
-            contains_required_files(folder_path) == 
-            
-                            
-        else:
-            print(f'{folder} is the DOCS folder') 
-            
-            
-                
-                
-                
 if __name__ == "__main__":
-    # organize_files_on_desktop()
-    # organize_docs()
-    path_is_dir()
-   
-                
+    organize_files_on_desktop()
+    organize_docs()      
+    
+    
+                  
+     
+    """Features for another day """               
+# def contains_required_files(folder_path:str)-> int:
+#     doc_counter: int = 0
+#     required_extensions:tuple[str] = (".pdf", ".docx", ".txt",".doc",".xlsx",".csv",)
+    
+#     for dirpath, dirnames, files in os.walk(folder_path):
+#         for file in files:
+#             # file_path: str = os.path.join(docs_path, file)
+#             if file.endswith(required_extensions) :
+#                 doc_counter += 1                
+#     return doc_counter
+
+# def path_is_dir() -> None:    
+#     #gets a list of the directories on the desktop
+#     directories:list[str] = os.listdir(main_desktop_path)  
+#     docs_path:str = os.path.join(main_desktop_path, 'DOCS') #gets DOCS folder path
+    
+#     for folder in directories:
+#         folder_path:str = os.path.join(main_desktop_path,folder) #gets path of that folder
+        
+#         if os.path.isdir(folder_path) and folder_path != docs_path:#checks if the path is actually a folder
+#             print(f'{folder} - Folder')
+            
+#             docs_counter: int = contains_required_files(folder_path)
+#             #checks if those folders contains documents 
+#             if docs_counter > 0 :
+#                 print(f'{docs_counter} in the {folder} folder')
+#         else:
+#             print(f'{folder} is the DOCS folder') 
