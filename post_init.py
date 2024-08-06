@@ -14,7 +14,11 @@ class Fruit:
     total_price: float = field(init=False)
     
     # Post initializer only runs once 
-    def __post_init__(self):
+    def __post_init__(self, is_rare: bool | None):
+        
+        if is_rare:
+            self.price_per_kg *= 2
+        
         self.total_price = (self.grams/1000) * self.price_per_kg
         
     def describe(self) -> None:
@@ -23,12 +27,13 @@ class Fruit:
 def main():
     apple:Fruit = Fruit('Apple', 2500, 5)
     orange:Fruit = Fruit('Orange', 3500, 10)
+    passion: Fruit = Fruit('Passion Fruit', 2100, 10, is_rare=True)
     
     print(f'{apple}')
     print(f'{orange}')
-    # print(f'{''}')
-    # apple.describe()
-    # orange.describe()
+    print(f'{passion}')
+   
+    
     
  
 if __name__ == "__main__":
