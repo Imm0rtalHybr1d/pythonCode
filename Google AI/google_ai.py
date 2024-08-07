@@ -1,5 +1,5 @@
 import google.generativeai as genai
-
+import os
 # Replace YOUR_API_KEY with your actual API key that you can get from https://cloud.google.com/
 API_KEY: str = "AIzaSyBB7-NFo2xh4RlNH7CU4sX3a4CW2zdeHSE"
 genai.configure(api_key=API_KEY)
@@ -7,28 +7,57 @@ model: genai.GenerativeModel = genai.GenerativeModel('gemini-1.5-flash')
 
 previous_prompt = ""
 
-def get_prompt() -> None:
+
+"""This function gives the user a brief on how to create a prompt """
+def get_topic() -> str:
+    prompt_file_path: str = fr'C:\Users\01465307\Desktop\pythonCode\Google AI\prompt_creation.md'
+    with open(prompt_file_path, mode='r') as file:
+        # lines:list[str] = file.readlines()
+        for line in file:
+            print(f'{line}',end="")
+
+    print('Please enter your prompt')
+    user_prompt: str = input()
+    return user_prompt
+
+def read_prompt() -> str:
+    default_prompt: str
+    with open (fr'C:\Users\01465307\Desktop\pythonCode\Google AI\prompt_creation.md', mode='r') as file:
+        for line in file:
+            default_prompt = line
+    return default_prompt
+
+
+
+"""This functions takes a prompt (optionally) or allows user to enter a prompt"""
+def get_prompt(full_prompt:str|None = None) -> None:
     global previous_prompt
     
+    while True:
+        print('Enter a prompt (or type "exit" to quit):') #tell user to give us a prompt
+        user_prompt: str = input()
+        print(f'{''}')
+        default_prompt: str = read_prompt()
+        full_prompt = default_prompt+". User prompt: "+user_prompt
+        
+        response: genai.Response = model.generate_content(full_prompt)
+        ai_response: str = response.text
+        print(ai_response)                           
+        
+        previous_prompt = full_prompt
+        continue
+    
+        # elif full_prompt == 'exit':
+        #     break
+        
+        # else:
+            
+        #     response: genai.Response = model.generate_content(full_prompt)
+        #     ai_response: str = response.text
+        #     print(ai_response)  
+             
+        #     previous_prompt = full_prompt
    
-    print('Enter a prompt (or type "exit" to quit):') #tell user to give us a promt
-    user_prompt: str = input()
-    print(f'{''}')
-    
-    full_prompt = f"i want you to provide information on diffrent exercises that a use will ask you, keep in mind that your answers should only included exercises that can be done with free weights as the user does not have gym machines the user looking for an informative and consise, yet easy to read and understand response.Be Clear and Concise.for example if a user asks 5 types of leg exercises, your answer should name the exercises, a step by step on how to do it, which muscle it affects and any relavant information to the user doing this exercise.Use numbered points for main headings e.g 1.barbell curl, bullet point for sub headings to organize your response.Consider that the user's main goal is to gain muscle and strength. User's prompt: {user_prompt}"
-
-    #uses model.generate_content(full_prompt) to send the prompt thru to google gemini AI
-    #stores google gemini AI response in the response variable
-    response: genai.Response = model.generate_content(full_prompt)
-    
-    ai_response: str = response.text
-    print(ai_response)
-    
-    print(f'{''}')
-    save: str = input('Would you like to save the response to a Markdown file? y/n')    
-    if save == 'y':
-        save_response(ai_response)
-
 def save_response(ai_response:str) -> None:
     #Creates a markdown file and writes the response to it 
     with open("output.md", "w") as file:
@@ -37,8 +66,14 @@ def save_response(ai_response:str) -> None:
         print('Info saved to output.md')
         
 def main():
-    get_prompt()
-    save_response()
+    os.system(r'cls')
+    want_ptompt: str = input("Would you like to be assisted with creating a promt: y/n ")
+    if want_ptompt.lower() == 'y':
+        user_promt: str = get_topic()
+        get_prompt(user_promt                                                                                                  )
+    else:
+        get_prompt()
+    
 
 if __name__ == "__main__":
     main()
